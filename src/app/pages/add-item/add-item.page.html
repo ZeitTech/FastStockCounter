@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Add Item
+    </ion-title>
+    
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="validate()">
+        <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="secondary">
+      <ion-button (click)="addBarcode()">
+        <ion-icon slot="icon-only" name="barcode-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+      <ion-icon *ngIf="!isNameValid" color="danger" name="close-circle" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Code</ion-label>
+      <ion-input [(ngModel)]="code"></ion-input>
+      <ion-icon *ngIf="!isCodeValid" color="danger" name="close-circle" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Barcode</ion-label>
+      <ion-input [(ngModel)]="barcode"></ion-input>
+      <ion-icon *ngIf="!isBarcodeValid" color="danger" name="close-circle" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Unit of Measure</ion-label>
+      <ion-input [(ngModel)]="uofM"></ion-input>
+      <ion-icon *ngIf="!isUofMValid" color="danger" name="close-circle" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Quantity</ion-label>
+      <ion-input [(ngModel)]="quantity" type="number"></ion-input>
+    </ion-item>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Last Export</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="full" *ngFor="let exp of lstHistory">
+          <ion-label>
+            <h2>{{ exp.fileName }}</h2>
+            <h2>{{ exp.exportDate }}</h2>
+            <h2>{{ exp.name }}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
